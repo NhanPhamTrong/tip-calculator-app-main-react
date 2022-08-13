@@ -226,6 +226,11 @@ body #root {
   background-color: #69f3dd;
 }
 
+.container .result button.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     width: 85%;

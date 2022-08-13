@@ -63,6 +63,23 @@ export const App = () => {
         Calculation(temp)
     }
 
+    const Reset = (e) => {
+        document.querySelector("#bill").value = ""
+        document.querySelector("#tip").value = ""
+        document.querySelector("#number-of-people").value = ""
+
+        document.querySelectorAll("li button").forEach((e) => {
+            e.classList.remove("active")
+        })
+
+        setTip(0)
+        setError(false)
+        setResult({
+            tipAmount: 0,
+            total: 0
+        })
+    }
+
     return (
         <>
             <img src={logo} alt="Logo" />
@@ -105,7 +122,7 @@ export const App = () => {
                         <p className="title">Total</p>
                         <p className="note">/ person</p>
                     </div>
-                    <button type="reset" aria-label="Reset input">Reset</button>
+                    <button className={result.total !== 0 ? "" : "disabled"} type="reset" aria-label="Reset input" disabled={result.total !== 0 ? false : true} onClick={Reset}>Reset</button>
                 </div>
             </div>
         </>

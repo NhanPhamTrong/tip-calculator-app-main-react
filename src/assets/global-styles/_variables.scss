@@ -1,0 +1,34 @@
+// Breakpoints
+// 600px and DOWN: phones
+// 600px and UP: portrait tablets and large phones
+// 768px and up: landscape tablets
+// 992px and up: laptops/desktops
+// 1200px and up: large laptops and desktops
+
+// Colors
+
+// $strong-cyan: rgb(38, 192, 171);
+// $very-dark-cyan: rgb(0, 73, 77);
+// $dark-grayish-cyan: rgb(94, 122, 125);
+// $dark-grayish-cyan: rgb(127, 156, 159);
+// $light-grayish-cyan: rgb(197, 228, 231);
+// $light-grayish-cyan: rgb(244, 250, 250);
+// $white: rgb(255, 255, 255);
+
+$primary: rgb(0, 73, 77);
+$on-primary: rgb(38, 192, 171);
+$on-primary-light: rgb(255, 255, 255);
+$on-primary-dark: rgb(127, 156, 159);
+
+$secondary: rgb(38, 192, 171);
+$secondary-light: rgb(105, 243, 221);
+$on-secondary: rgb(0, 73, 77);
+
+$background: rgb(197, 228, 231);
+
+$surface: rgb(255, 255, 255);
+$on-surface: rgb(88, 165, 165);
+$on-surface-light: rgb(244, 250, 250);
+$on-surface-dark: rgb(94, 122, 125);
+
+$error: rgb(176, 0, 32);

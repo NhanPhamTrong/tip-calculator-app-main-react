@@ -10,8 +10,6 @@ export const App = () => {
     })
 
     const [error, setError] = useState(false)
-    
-    const [tip, setTip] = useState(0);
 
     const Calculation = (tip) => {
         const bill = document.querySelector("#bill").value
@@ -35,8 +33,6 @@ export const App = () => {
 
             const temp = document.querySelector("#tip").value === "" ? 0 : document.querySelector("#tip").value
 
-            setTip(temp)
-
             Calculation(temp)
         }
         else {
@@ -45,21 +41,15 @@ export const App = () => {
             })
             e.target.classList.add("active")
 
-            const temp = e.target.getAttribute("amount")
-            
-            setTip(temp)
+            const temp = e.target.getAttribute("name")
 
             Calculation(temp)
         }
     }
 
     const GetResult = () => {
-        Calculation(tip)
-    }
-
-    const GetResultOnTip = () => {
         const temp = document.querySelector("#tip").value
-
+        
         Calculation(temp)
     }
 
@@ -72,7 +62,6 @@ export const App = () => {
             e.classList.remove("active")
         })
 
-        setTip(0)
         setError(false)
         setResult({
             tipAmount: 0,
@@ -83,29 +72,29 @@ export const App = () => {
     return (
         <>
             <img src={logo} alt="Logo" />
-            <div className="container">
+            <main className="container">
                 <div className="input-content">
                     <Form formType={"bill"} onSubmit={GetResult} />
                     <div className="select-tip">
                         <h1>Select Tip %</h1>
                         <ul>
                             <li>
-                                <button type="button" aria-label="5% tip" amount="5" onClick={GetResultOnClick}>5%</button>
+                                <button type="button" aria-label="5% tip" name="5" onClick={GetResultOnClick}>5%</button>
                             </li>
                             <li>
-                                <button type="button" aria-label="10% tip" amount="10" onClick={GetResultOnClick}>10%</button>
+                                <button type="button" aria-label="10% tip" name="10" onClick={GetResultOnClick}>10%</button>
                             </li>
                             <li>
-                                <button type="button" aria-label="15% tip" amount="15" onClick={GetResultOnClick}>15%</button>
+                                <button type="button" aria-label="15% tip" name="15" onClick={GetResultOnClick}>15%</button>
                             </li>
                             <li>
-                                <button type="button" aria-label="25% tip" amount="25" onClick={GetResultOnClick}>25%</button>
+                                <button type="button" aria-label="25% tip" name="25" onClick={GetResultOnClick}>25%</button>
                             </li>
                             <li>
-                                <button type="button" aria-label="50% tip" amount="50" onClick={GetResultOnClick}>50%</button>
+                                <button type="button" aria-label="50% tip" name="50" onClick={GetResultOnClick}>50%</button>
                             </li>
                             <li>
-                                <Form onSubmitTip={GetResultOnTip} />
+                                <Form onSubmitTip={GetResult} />
                             </li>
                         </ul>
                     </div>
@@ -124,7 +113,7 @@ export const App = () => {
                     </div>
                     <button className={result.total !== 0 ? "" : "disabled"} type="reset" aria-label="Reset input" disabled={result.total !== 0 ? false : true} onClick={Reset}>Reset</button>
                 </div>
-            </div>
+            </main>
         </>
     )
 }
